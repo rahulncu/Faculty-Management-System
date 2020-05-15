@@ -1,0 +1,85 @@
+<!-- <div class="bg-info p-2 text-white" class="text-center" style="background-color: skyblue;">
+  <h3 >Placeholder for admin features
+  </h3>
+</div>
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Book Name</label>
+      <input  class="form-control" id="inputBookName" placeholder="Enter Book Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Book id</label>
+      <input class="form-control" id="inputBookid" placeholder="Enter Book id">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Publisher</label>
+    <input class="form-control" id="inputPurchasedate" placeholder="Enter Publisher">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Author Name</label>
+    <input class="form-control" id="inputAuthorName" placeholder="Enter Author Name">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Purchase Date</label>
+      <input type="date" class="form-control" id="Enter Purchasedate" placeholder="Enter Date">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputState">Quntity</label>
+      <select id="inputState" class="form-control" placeholder="Enter Quantity">
+      
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip">Branch</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Branch
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <button type="button" class="btn btn-primary btn-lg btn-block">Add</button>
+<button type="button" class="btn btn-secondary btn-lg btn-block">Delete</button>
+</form> -->
+<div class=" p-2 text-center text-white" style="background-color: #A8413D">
+  <h3>ADMIN LOGIN</h3>
+</div>
+<div class="container-fluid" >
+  <div class="row">
+  
+  </div>
+  <div class="row mt-2" >
+  <div class="col-3" style="background-color: #fff0d9;">
+  <button class="btn btn-outline-info btn-block"
+  routerLink="/admin/main/products"
+  routerLinkActive="active" style="background-color: #ff980d; color: white; ">
+  <i class="far fa-user">  Faculty list</i>
+  </button>
+  <button class="btn btn-outline-info btn-block" style="background-color: #ff980d; color: white; " routerLink="/admin/main/products/create">
+    <i class="fas fa-user-plus">  Add new Faculty</i>
+    </button>
+  <!-- <button class="btn btn-outline-info btn-block"
+  routerLink="/admin/main/products/create
+  routerLinkActive="active">
+  Add Faculty
+  </button> -->
+  
+  <button class="btn btn-outline-danger btn-block" style="background-color: red; color: white; " (click)="logout()">
+    <i class="fas fa-sign-out-alt">Logout</i>
+    </button>
+    </div>
+    <div class="col-9">
+    <router-outlet></router-outlet>
+    </div>
+    </div>
+    </div>

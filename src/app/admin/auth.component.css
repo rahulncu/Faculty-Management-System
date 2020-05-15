@@ -1,0 +1,21 @@
+#auth1{
+    background-color: #A8413D;
+}
+#auth2{
+    width: 30%; 
+    margin-left: 35%; 
+    margin-top: 20px;
+    margin-bottom: 50px; 
+    background-color:#F2982D;
+
+}
+#auth3{
+    background-color: #A8413D;
+}
+#auth2 label{
+    color: white;
+}
+
+#auth2 h1{
+    color: white;
+}

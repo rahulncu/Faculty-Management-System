@@ -1,0 +1,110 @@
+<!--        ANGULAR 
+    
+It is used to create large applications and to structure, edit and maintain the code
+processing is faster(single page application ); create a single page application 
+e2e=end to end testing ; to test and debug the code
+anything declared after @ is a decorator , e.g. @NGModule ; to define the type of filei.e. here it is of modue type
+`` == to write code in multiple lines
+*ngFor is a directive ->used as and attribute in html ; syntax in similar to foreach loop in js
+ng g c componentname => to create a component
+the logic for all the services provided by the server is store in services.ts and not in component.ts
+in property binding , we write properties inside the tag
+
+
+ANGULAR is widely used to create single page applications;
+In a single page application :only the components get changed / affected and not the whole web page / i.e. the webpage need not be refreshed/loaded again and again
+this is also a faster means of data maipulation
+ng g c component name // To create a component
+
+Routing helps in navigation to different components , i.e. a page does not open but a component does open
+
+ROUTING is done in three steps :
+1.Router module  is imported inside app.module.ts
+2. use a pre installed directive i.e. router outlet inside app.component.html
+3. define routing links inside home.component.html
+
+
+how to install bootstrap in json ???? =>>>>
+1.install bootstrap using "npm install bootstrap --save" command in the project folder
+2. open the bootstrap folder in the node module folder inside the project
+3. open dist -> open css
+4. copy the css folder path 
+5. open the angular.json file
+6. inside the style section , paste the path and make necesaary changes such as replace
+\ with / and add /bootsrap.css 
+
+ng g c comp_name = used to create component
+
+ng new folder_name = used to create folder
+
+npm install bootstrap
+
+npm install --save-dev json-server@0.12.1
+
+npm install --save-dev jsonwebtoken@8.1.1
+
+Path for json= "json":"json-server data.js -p 3500"
+
+npm install font-awesome --save
+
+service class always has to be declared in providers (mode.module.ts  ke andar)
+-->
+<div  class=" p-2 text-center text-white" style="background-color: #A8413D">
+  <h3>FACULTY MANAGEMENT SYSTEM</h3>
+</div>
+<div id="detail" class="container-fluid">
+  <div class="row">
+      <div class="col-3 p-2">
+        <!-- {{categories.length}} Categories -->
+        <button class="btn btn-block btn-outline-primary" style="background-color: #ff980d; color: white; " (click)="changeCategory()">
+          All Branches
+        </button>
+        <button *ngFor="let cat of categories" class="btn btn-outline-primary btn-block"
+        [class.active]="cat == selectedCategory" (click)="changeCategory(cat)" style="background-color: #ff980d; color: white;">
+         {{ cat }}
+        </button>
+        <!-- <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">Admin</button>  -->
+      </div>
+      <!-- <div class="col-9 bg-success p-2"> -->
+        <div class="col-9 p-2" style="height: 600px; 
+        overflow-y: scroll;">
+        <!-- {{products.length}} Products -->
+        <div *ngFor=" let product of products" class="card m-1 p-1 bg-light">
+          <h4>
+            {{product.name}}
+            <span class="badge badge-pill badge-primary float-right" style="background-color: #010D4E;">
+              {{ product.category }}
+              <!-- | currency:"":"symbol":"2.2-2"}} -->
+            </span>
+          </h4>
+          
+          <div class="card-text bg-white p-1">
+            <!-- {{ product.description }} -->
+            <p>Date of joining :{{ product.doj }}</p><br>
+            <p>Designation :{{ product.designation }}</p>
+
+            
+            <button class="btn btn-info btn-sm float-right"
+            (click)="addProductToCart(product)">Show Details</button>
+          </div>
+  
+        </div>
+        <!-- <div class="form-inline float-left mr-1">
+          <select class="form-control" [value]="productsPerPage"
+                    (change) = "changePageSize($event.target.value)">
+               <option value="3">3 per Page </option>
+               <option value="4">4 per Page </option>
+               <option value="5">5 per Page </option>
+               <option value="6">6 per Page </option>
+          </select>
+        </div> -->
+        <!-- <div class="btn-group float-right">
+          <button *ngFor="let page of pageNumbers" (click)="changePage(page)"
+                class="btn btn-outline-primary" [class.active]="page == selectorPage">
+              {{page}}
+          </button> -->
+        <!-- s -->
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>

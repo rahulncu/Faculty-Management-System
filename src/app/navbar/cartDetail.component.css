@@ -1,0 +1,12 @@
+.card{
+    background-color: lightgoldenrodyellow;
+    width: 60%;
+    /* margin-top: 2.5%; */
+    margin-left: 20%;
+    margin-bottom: 5%px;
+    
+}
+.card p{
+    /* margin-left: 5%; */
+    margin: 5% 5% 5% 5%;
+}

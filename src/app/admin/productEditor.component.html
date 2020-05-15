@@ -1,0 +1,116 @@
+<div class="bg-primary p-2 text-white" [class.bg-warning]="editing"
+[class.text-dark]="editing">
+<h5>{{editing ? "Edit" : "Create"}} Faculty Details</h5>
+</div>
+<form novalidate #productForm="ngForm" (ngSubmit)="save(productForm)">
+
+    <div class="form-group">
+        <label>Name *</label>
+        <input autofocus  type="text" maxlength="64" class="form-control" required name="name" #name="ngModel"
+          [(ngModel)]="product.name" />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+          <div *ngIf="name.errors.required">
+            Name is required.
+          </div>
+          
+        </div>
+      </div>
+<!-- <div class="form-group">
+    <label>Branch</label><br> -->
+    <!-- <input class="form-control"  name="category" [(ngModel)]="product.category" /> -->
+    <!-- <input type="radio" name="Branch" value="CSE" [(ngModel)]="product.category" >CSE<br/>
+<input type="radio" name="Branch"  value="ECE" [(ngModel)]="product.category" >ECE<br/>
+<input type="radio" name="Branch"   value="ME" [(ngModel)]="product.category" >ME<br/>
+<input type="radio" name="Branch"   value="Civil" [(ngModel)]="product.category" >Civil<br/> -->
+
+
+    
+    <!-- </div> -->
+    <div class="form-group">
+        <label>Branch *</label>
+        <select [(ngModel)]='product.category' class='form-control' required name="category" #category="ngModel" value="Branch">
+          <option value='CSE'>CSE</option>
+          <option value='ECE'>ECE</option>
+          <option value='ME'>ME</option>
+          <option value='Civil'>Civil</option>
+          
+        </select>
+        <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert alert-danger">
+          <div *ngIf="category.errors.required">
+            Branch is required.
+          </div>
+        </div>
+      </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <select [(ngModel)]='product.gender' class='form-control' required name="Gender" #gender="ngModel" value="Gender">
+              <option value='Female'>Female</option>
+              <option value='Male'>Male</option>
+              <option value='Other'>Other</option>
+              
+              
+            </select>
+            
+          </div>
+
+
+<div class="form-group">
+
+<label>Date Of Birth</label>
+<input type="date" class="form-control" name="dob" [(ngModel)]="product.dob" />
+</div>
+    <div class="form-group">
+    <label>Email *</label>
+    <input type="email" placeholder="abcd@xyz.com" #email="ngModel" required #email="ngModel" class="form-control" name="description"
+    [(ngModel)]="product.description"/>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+      </div>
+    </div>
+    
+  
+    <div class="form-group">
+    <label>Phone Number</label>
+    <input type="text"  class="form-control"title="ONLY DIGITS ARE ALLOWED" pattern="[0-9]{10}" placeholder="Enter your number" name="price" [(ngModel)]="product.price" />
+    </div>
+    <div class="form-group">
+
+    <label>Date Of Joining *</label>
+<input type="date"  class="form-control" name="doj" required #doj="ngModel" [(ngModel)]="product.doj" />
+<div *ngIf="doj.invalid && (doj.dirty || doj.touched)" class="alert alert-danger">
+    <div *ngIf="doj.errors.required">
+      Date of joininng is required.
+    </div>
+  </div>
+</div>
+<div class="form-group">
+
+<label>Years Of Experiance</label>
+<input type="number" class="form-control" name="yoe" [(ngModel)]="product.yoe" />
+</div>
+<div class="form-group">
+
+<label>Designation</label><br>
+<select [(ngModel)]='product.designation' class='form-control' required name="Designation" value="Designation">
+    <option value='Assistant Professor'>Assistant Professor</option>
+    <option value='Associate Professor'>Associate Professor</option>
+    <option value='Professor'>Professor</option>
+    
+    
+  </select>
+
+</div>
+<div *ngIf="formnotvalid == 1" class="bg-primary p-2 text-white text-center bg-danger">
+  Please complete all the fields
+</div><br>
+
+<button type="submit" class="btn btn-success" [class.btn-warning]="editing">
+    {{editing ? "Save" : "Create"}}
+    </button>
+    <button type="reset" class="btn btn-secondary" routerLink="/admin/main/products">
+    Cancel
+    </button>
+    </form>

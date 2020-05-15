@@ -1,0 +1,33 @@
+
+<div id="auth1" class=" p-2 text-center text-white" >
+    <h3>ADMIN LOGIN</h3>
+  </div>
+<div class="container-fluid" style="background-image: url(https://i1.wp.com/www.admissionmba.in/wp-content/uploads/2013/10/ITM-University.jpg); height: 1100px;  ">
+
+<div class="bg-danger mt-2 p-2 text-center text-white"
+    *ngIf="errorMessage != null">
+    {{errorMessage}}
+</div>
+<div id="auth2" class="p-2" >
+    <img class="mb-4" src="http://www.ncuindia.edu/wp-content/themes/ncuindia/assets/images/logo.png" width="100%" alt="">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in :-</h1>
+    <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
+        <div class="form-group">
+
+  <label><i class="far fa-user"> Username</i></label>
+            <input autofocus class="form-control" name="username"
+            [(ngModel)]="username" required />
+        </div>
+        <div class="form-group">
+            <label ><i class="fas fa-lock">  Password</i></label>
+            <input class="form-control" type="password" name="password"
+                [(ngModel)]="password" required />
+        </div>
+        <div class="text-center">
+            <button id="auth3" class="btn btn-primary m-1" type="submit">Log In</button>
+          <button class="btn btn-secondary m-1" routerLink="/">Go back</button>
+
+        </div>
+    </form>
+</div>
+</div>

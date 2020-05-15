@@ -1,0 +1,105 @@
+<!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col bg-dark text-white">
+                <a class="navbar-brand">SPORTS STORE</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-2">
+                <h2 class="text-center">Your Cart</h2>
+                <table class="table table-bordered table-striped p-2">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Product</th>
+                            <th class="text-right">Price</th>
+                            <th class="text-right">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="cart.lines.length == 0">
+                            <td colspan="4" class="text-center">
+                                Your cart is empty
+                            </td>
+                        </tr>
+                        <tr *ngFor="let line of cart.lines">
+                            <td>
+                                <input type="number" class="form-control-sm" style="width:5em" [value]="line.quantity"
+                                    (change)="cart.updateQuantity(line.product,
+            $event.target.value)" />
+                            </td>
+                            <td>{{line.product.name}}</td>
+                            <td class="text-right">
+                                {{line.product.price | currency:"USD":true:"2.2-2"}}
+                            </td>
+                            <td class="text-right">
+                                {{(line.lineTotal) | currency:"USD":true:"2.2-2" }}
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-danger" (click)="cart.removeLine(line.product.id)">
+                                    Remove
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-right">Total:</td>
+                            <td class="text-right">
+                                {{cart.cartPrice | currency:"USD":"symbol":"2.2-2"}}
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <button class="btn btn-primary m-1" routerLink="/store">
+                        Continue Shopping
+                    </button>
+                    <button class="btn btn-secondary m-1" routerLink="/checkout" [disabled]="cart.lines.length == 0">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </div> -->
+        <div class=" p-2 text-center text-white" style="background-color: #A8413D">
+            <h3>Faculty Details</h3>
+          </div>
+        <div class="container-fluid" style="background-image: url(https://i1.wp.com/www.admissionmba.in/wp-content/uploads/2013/10/ITM-University.jpg); height: 1100px;  ">
+               <div class="card" *ngFor="let line of cart.lines">
+                 <p>  ID :  {{line.product.id}} <br><br>
+                   Name :  {{line.product.name}} <br><br>
+                   Branch :  {{line.product.category}} <br><br>
+                   Gender :  {{line.product.gender}} <br><br>
+                   Date of Birth :  {{line.product.dob}} <br><br>
+                   Email Id :  {{line.product.description}} <br><br>
+                   Phone :  {{line.product.price}} <br><br>
+                   Address :  {{line.product.address}} <br><br>
+                   Date of Joining :  {{line.product.doj}} <br><br>
+                   Years of Experiance :  {{line.product.yoe}} <br><br>
+                   Designation :  {{line.product.designation}} <br><br>
+                   Faculty Promote :   <button class="btn btn-sm btn-danger" *ngIf="(line.product.promoted==false)" (click)="promoteFaculty(line.product)">
+                    Promote?
+                    </button>
+                    <button class="btn btn-sm btn-success" *ngIf="(line.product.promoted==true)" disabled=true>
+                        Promoted to {{line.product.designation}}
+                    </button>
+                    </p>
+
+               </div>
+               
+                <div class="row">
+                    <div class="col">
+                        <!-- <div class="text-center">
+                            <button class="btn btn-primary m-1" routerLink="/store">
+                                Add more Book
+                            </button>
+                            <button class="btn btn-secondary m-1" routerLink="/checkout" [disabled]="cart.lines.length == 0">
+                                Continue Issue
+                            </button>
+                        </div> -->
+                    </div>
+                </div>

@@ -1,0 +1,33 @@
+<div style="height: 600px; overflow-y: scroll;">
+    <table class="table table-sm table-striped" >
+    <thead class="thead-dark">
+    <tr>
+    <th>ID</th><th>Name</th><th>Branch</th><th>Date of Joining</th><th>Years Of Experience</th><th>Designation</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of getProducts()">
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.category}}</td>
+    
+    <td>{{p.doj }}</td> 
+    <td>{{p.yoe }}</td> 
+    <td>{{p.designation }}</td> 
+
+    <td>
+    <button id="b1" class="btn btn-sm btn-warning" 
+    [routerLink]="['/admin/main/products/edit', p.id]">
+    Update
+    </button>
+    <button  class="btn btn-sm btn-danger" (click)="deleteProduct(p.id)">
+    Delete
+    </button>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- <button class="btn btn-primary" routerLink="/admin/main/products/create">
+    Add new Faculty
+    </button> --></div>
